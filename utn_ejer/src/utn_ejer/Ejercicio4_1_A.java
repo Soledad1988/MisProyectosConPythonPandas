@@ -2,7 +2,8 @@
 package utn_ejer;
 
 import java.util.Arrays;
-
+//Haga un main, donde por parametro ponga 3 números y una letra
+//que represente ascendente y descendente y muestre el orden por tal criterio
 public class Ejercicio4_1_A {
 
 public static void main(String[] args) {
