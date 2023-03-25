@@ -2,17 +2,18 @@ package clase_5_1;
 
 public class ItemCarrito {
 
-	Producto producto;
-	int cantidadProducto;
+	private Producto producto;
+	private int cantidadProducto;
 	
 	//constructor
 	public ItemCarrito() {
 		
 	}
-	
-	//metodo subtotal
-	public double calcularSubotal() {
-		 return producto.precio * this.cantidadProducto;
+
+	public ItemCarrito(Producto producto, int cantidadProducto) {
+		super();
+		this.producto = producto;
+		this.cantidadProducto = cantidadProducto;
 	}
 
 	//Getter y Setter
@@ -32,6 +33,14 @@ public class ItemCarrito {
 		this.cantidadProducto = cantidadProducto;
 	}
 	
+	//Método Subtotal
+	public double calcularSubtotal() {
+		double subtotal=0;
+		
+		subtotal = cantidadProducto * producto.getPrecio();
+		
+		return subtotal;
+	}
 	
 	
 }
