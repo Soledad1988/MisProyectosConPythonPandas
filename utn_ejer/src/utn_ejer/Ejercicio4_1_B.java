@@ -18,12 +18,35 @@ public static void main(String[] args) {
 	System.out.printf("Ingrese número 3: ");
 	numeros[2] = p.nextInt();
 	
-	Arrays.sort(numeros);
+	System.out.println("Como desea ordenar los números: \n"
+						+"a - Ascendente\n"
+			            +"b - descendendte");
+	
+	System.out.print("\nIngrese una opcion: ");
+	Scanner leer = new Scanner(System.in);
+	
+	char opcion = leer.next().charAt(0);
+	
+	switch(opcion) {
+	
+	case 'a':
 	System.out.println("-----Orden Ascendente--------");
 	for(i=0;i<numeros.length;i++) {
+		Arrays.sort(numeros);
 		System.out.println(numeros[i]);
 	}
+	break;
+	
+	case 'b':
+		System.out.println("------Orden Descendente------");
+		for(i=numeros.length-1;i>=0;i--) {
+			Arrays.sort(numeros);
+			System.out.println(numeros[i]);
+		}
+		
+		break;
 			
+	default:
 	}
-
+}
 }
