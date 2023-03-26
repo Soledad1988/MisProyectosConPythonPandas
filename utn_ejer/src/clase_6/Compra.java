@@ -1,6 +1,5 @@
 package clase_6;
 
-
 import java.time.LocalDateTime;
 
 public class Compra {
