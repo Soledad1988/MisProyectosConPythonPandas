@@ -1,38 +1,52 @@
 package trabajoPracticoIntegrador;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.ArrayList;
+
+
 
 public class Prueba {
+	
 	public static void main(String[] args) {
-	
 		
-		try {		
-			for(String linea: Files.readAllLines(Paths.get("D:\\Users\\Brenda\\Desktop\\Java - UTN\\TrabajoPractico\\resultados.csv"))) {
-				System.out.println(linea);
+		String partidos = "D:\\Users\\Brenda\\Desktop\\Java - UTN\\TrabajoPractico\\resultados.csv";
+		BufferedReader leerArchivo = null;
+		String line = "";
+		
+		ArrayList<Partido> partido1 = new ArrayList<>();
+		
+		try {
+			leerArchivo = new BufferedReader(new FileReader(partidos));
+		    while ((line = leerArchivo.readLine()) != null) { 
+		    	
+		       String[] datos = line.split(";"); //separador 
+		
 				
-					/*String equipo1 = linea.split(",")[0];
-					int golesEquipo1 = Integer.parseInt(linea.split(",")[1]);
-					int golesEquipo2 = Integer.parseInt(linea.split(",")[2]);
-					String equipo2 = linea.split(",")[3];
-					
-					Partido partido1 = new Partido();*/
+				String equipo1 = datos[0];
+				String equipo2 = datos[3];
+				int n = Integer.parseInt(datos[1]);
+				int m = Integer.parseInt(datos[2]);
 				
+				partido1.add(new Partido(equipo1,equipo2,n,m));
+			
+				
+			        if (n > m) {
+			            System.out.println("gana "+equipo1);
+			            
+			        } else if(n == m) {
+			        	System.out.println("empate ");	
+			            }else {
+			            	System.out.println("gana "+equipo2);
+			            }
+			            
+			        
+		    	}
+			} catch (IOException e) {
+			    e.printStackTrace();
 			}
-			
-	
-			
-			for(String linea: Files.readAllLines(Paths.get("D:\\Users\\Brenda\\Desktop\\Java - UTN\\TrabajoPractico\\pronostico.csv"))) {
-				System.out.println(linea);
-			}
-		
-			
-		}catch(IOException ex) {
-			System.out.println("no se encontro el archivo");
-		}
-		
-		System.out.println("\nPuntaje es = ");
 		
 	}
+	
 }
