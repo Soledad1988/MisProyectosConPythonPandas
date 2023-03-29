@@ -8,7 +8,6 @@ public class Carrito {
 	private LocalDateTime fechaCompra;
 	private ItemCarrito[] itemCarrito;
 	
-	public static int total;
 	
 	//constructor
 	public Carrito() {
