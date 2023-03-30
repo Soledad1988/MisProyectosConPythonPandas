@@ -3,29 +3,30 @@ package trabajoPracticoIntegrador;
 
 public class Partido {
 
-	//Equipo equipo1;
-	String equipo1;
-	//Equipo equipo2;
-	String equipo2;
+	Equipo equipo1;
+	Equipo equipo2;
 	int golesEquipo1;
 	int golesEquipo2;
-	//ResultadoEnum resultado;
+	ResultadoEnum resultado;
 
 	
 	public Partido() {
 		
 	}
 	
-	public Partido(String equipo1, String equipo2, int golesEquipo1, int golesEquipo2) {
+
+	public Partido(Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2, ResultadoEnum resultado) {
 		super();
-		//this.equipo1 = equipo1;
-		//this.equipo2 = equipo2;
+		this.equipo1 = equipo1;
+		this.equipo2 = equipo2;
 		this.golesEquipo1 = golesEquipo1;
 		this.golesEquipo2 = golesEquipo2;
-		//this.resultado = resultado;
+		this.resultado = resultado;
 	}
 
-	/*public Equipo getEquipo1() {
+
+
+	public Equipo getEquipo1() {
 		return equipo1;
 	}
 
@@ -39,7 +40,7 @@ public class Partido {
 
 	public void setEquipo2(Equipo equipo2) {
 		this.equipo2 = equipo2;
-	}*/
+	}
 
 	public int getGolesEquipo1() {
 		return golesEquipo1;
@@ -57,13 +58,13 @@ public class Partido {
 		this.golesEquipo2 = golesEquipo2;
 	}
 
-	//public ResultadoEnum getResultado() {
-	//	return resultado;
-	//}
+	public ResultadoEnum getResultado() {
+		return resultado;
+	}
 
-	//public void setResultado(ResultadoEnum resultado) {
-	//	this.resultado = resultado;
-	//}
+	public void setResultado(ResultadoEnum resultado) {
+		this.resultado = resultado;
+	}
 
 	
 	

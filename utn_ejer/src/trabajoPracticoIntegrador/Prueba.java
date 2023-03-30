@@ -5,8 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
-
 public class Prueba {
 	
 	public static void main(String[] args) {
@@ -29,7 +27,8 @@ public class Prueba {
 				int n = Integer.parseInt(datos[1]);
 				int m = Integer.parseInt(datos[2]);
 				
-				partido1.add(new Partido(equipo1,equipo2,n,m));
+				System.out.println(datos[0] + " "+ datos[3] + " "+datos[1]+" "+datos[2]);
+				//partido1.add(new Partido(equipo1,equipo2,n,m));
 			
 				
 			        if (n > m) {
