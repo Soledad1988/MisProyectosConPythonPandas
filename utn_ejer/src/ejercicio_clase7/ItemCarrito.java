@@ -1,3 +1,4 @@
+
 package ejercicio_clase7;
 
 
@@ -42,4 +43,10 @@ public class ItemCarrito {
 		}
 	
 	
+	//calcularPrecio
+		public double precio(double precio) {
+			return  cantidadProducto * producto.getPrecio();
+		}
+		
+
 }

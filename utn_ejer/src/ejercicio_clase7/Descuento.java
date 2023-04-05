@@ -1,46 +1,48 @@
 package ejercicio_clase7;
 
-public class Descuento {
+public abstract class Descuento {
 
-	private String tipo;
-	private double porcentaje;
-	private int montoFijo;
+	private double venta;
+	
+	public double getVentaDesc() {
+	return venta;
+	}
+	
+	public void setVentaDesc(double venta) {
+	this.venta = venta;
+	}
+	
+	public abstract double venta(double precioInicial);
 	
 	
-	public Descuento() {
+	
+	
+	    /*private double venta;
+		private int monto;
+		private int porcentaje;
 		
-	}
-	
-	public Descuento(String tipo, double porcentaje, int montoFijo) {
-		super();
-		this.tipo = tipo;
-		this.porcentaje = porcentaje;
-		this.montoFijo = montoFijo;
-	}
+		public int getMonto() {
+			return monto;
+		}
+		public void setMonto(int monto) {
+			this.monto = monto;
+		}
+		public int getPorcentaje() {
+			return porcentaje;
+		}
+		public void setPorcentaje(int porcentaje) {
+			this.porcentaje = porcentaje;
+		}
+		
+		public int descuentoFifo() {
+			double totalConDto;
+			return (int) (totalConDto = this.venta - this.monto);
+		}
+		
+		public int descuentoPorcentaje() {
+			double totalConDto;
+			return (int) ((totalConDto = this.venta * this.porcentaje)/100);
+		}*/
 
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	public double getPorcentaje() {
-		return porcentaje;
-	}
-
-	public void setPorcentaje(double porcentaje) {
-		this.porcentaje = porcentaje;
-	}
-
-	public int getMontoFijo() {
-		return montoFijo;
-	}
-
-	public void setMontoFijo(int montoFijo) {
-		this.montoFijo = montoFijo;
-	}
-	
-	
+		
 }
