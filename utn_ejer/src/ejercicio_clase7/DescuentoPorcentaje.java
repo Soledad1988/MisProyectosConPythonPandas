@@ -3,8 +3,7 @@ package ejercicio_clase7;
 public class DescuentoPorcentaje extends Descuento{
 
 	@Override
-	public double venta(double precioInicial) {
-		return precioInicial - (precioInicial*this.getVentaDesc());
-	}
-	
+	public double venta(double total) {
+		return total -(total * this.getDescuentoPorcentaje());
+	}	
 }

@@ -37,18 +37,23 @@ public static void main(String[] args) {
 			
 			
 			Descuento dtofijo = new DescuentoFijo();
-			dtofijo.setVentaDesc(14);
+			dtofijo.setDescuentoFijo(100);
+			System.out.println("----------------------------");
 			System.out.println("Total compra con descuento Fijo: ");
-			System.out.println(dtofijo.venta(100));
+			System.out.println(dtofijo.venta(540));
 			
-			Descuento dtoporc = new DescuentoPorcentaje();
-			dtoporc.setVentaDesc(0.3);
+			System.out.println(dtofijo.getDescuentoFijo());
+			
+			/*Descuento dtoporc = new DescuentoPorcentaje();
+			dtoporc.setDescuentoPorcentaje(0.3);
+			System.out.println("----------------------------");
 			System.out.println("Total compra con descuento Porcentaje: ");
-			System.out.println(dtoporc.venta(100));
+			System.out.println(dtoporc.venta(540));*/
 			
-			//System.out.println("Total compra con descuento: "+compra.descuento());
+			//System.out.println(compra.descuento());
 			
 			
+						System.out.println("----------------------------");
 			System.out.println("total de items "+compra.agregarItem(i));
 		}catch(IOException ex) {
 			System.out.println("no se encontro el archivo");

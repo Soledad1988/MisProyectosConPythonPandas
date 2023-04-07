@@ -2,47 +2,34 @@ package ejercicio_clase7;
 
 public abstract class Descuento {
 
-	private double venta;
+	private int descuentoFijo;
+	private double descuentoPorcentaje;
 	
-	public double getVentaDesc() {
-	return venta;
+	public int getDescuentoFijo() {
+		return descuentoFijo;
 	}
-	
-	public void setVentaDesc(double venta) {
-	this.venta = venta;
-	}
-	
-	public abstract double venta(double precioInicial);
-	
-	
-	
-	
-	    /*private double venta;
-		private int monto;
-		private int porcentaje;
-		
-		public int getMonto() {
-			return monto;
-		}
-		public void setMonto(int monto) {
-			this.monto = monto;
-		}
-		public int getPorcentaje() {
-			return porcentaje;
-		}
-		public void setPorcentaje(int porcentaje) {
-			this.porcentaje = porcentaje;
-		}
-		
-		public int descuentoFifo() {
-			double totalConDto;
-			return (int) (totalConDto = this.venta - this.monto);
-		}
-		
-		public int descuentoPorcentaje() {
-			double totalConDto;
-			return (int) ((totalConDto = this.venta * this.porcentaje)/100);
-		}*/
 
+	public void setDescuentoFijo(int descuentoFijo) {
+		this.descuentoFijo = descuentoFijo;
+	}
+
+	public double getDescuentoPorcentaje() {
+		return descuentoPorcentaje;
+	}
+
+	public void setDescuentoPorcentaje(double descuentoPorcentaje) {
+		this.descuentoPorcentaje = descuentoPorcentaje;
+	}
+
+	public abstract double venta(double total);
+
+	/*private double valorDescuento;
+		
+		public double getValorDescuento() {
+		return valorDescuento;
+		}
+		
+		public void setValorDescuento(double valorDescuento) {
+		this.valorDescuento = valorDescuento;*/
 		
 }
