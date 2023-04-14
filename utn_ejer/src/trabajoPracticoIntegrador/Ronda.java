@@ -2,39 +2,25 @@ package trabajoPracticoIntegrador;
 
 public class Ronda {
 
-	String numero;
-	Partido[] partidos;
-	int puntos;
-	
-	public Ronda(String numero, Partido[] partidos, int puntos) {
-		super();
-		this.numero = numero;
-		this.partidos = partidos;
-		this.puntos = puntos;
-	}
-
-	public String getNumero() {
-		return numero;
-	}
-
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
-
-	public Partido[] getPartidos() {
-		return partidos;
-	}
-
-	public void setPartidos(Partido[] partidos) {
-		this.partidos = partidos;
-	}
-
-	public int getPuntos() {
-		return puntos;
-	}
-
-	public void setPuntos(int puntos) {
-		this.puntos = puntos;
-	}
+	 private String nro;
+	    private Partido[] partidos;
+	    public Ronda() {
+	    }
+	    public Ronda(String nro, Partido[] partidos) {
+	        this.nro = nro;
+	        this.partidos = partidos;
+	    }
+	    public String getNro() {
+	        return nro;
+	    }
+	    public void setNro(String nro) {
+	        this.nro = nro;
+	    }
+	    public Partido[] getPartidos() {
+	        return partidos;
+	    }
+	    public void setPartidos(Partido[] partidos) {
+	        this.partidos = partidos;
+	    }
 	
 }
