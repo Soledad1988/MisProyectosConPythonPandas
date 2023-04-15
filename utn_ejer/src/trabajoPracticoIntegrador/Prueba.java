@@ -17,10 +17,12 @@ public class Prueba {
         partido1.setGolesEquipo2(Integer.parseInt(arrayResultado[2]));
         return partido1;
     }
+	
     public static String leerArchivos(String archivo){//metodo estatico leer archivos
         String arc = archivo;
         return arc;
     }
+    
     public static int obtenerPuntos(Pronostico[] pronosticoRonda, int indicePronostico){//metodo estatico obtener puntos
         int totalPuntos=0;
         for(int i=0; i<indicePronostico;i++){//recorro los pronosticos
@@ -28,29 +30,39 @@ public class Prueba {
         }
         return totalPuntos;
     }
-    public static Pronostico cargarPronosticos(int x,List<String>pronosticos,Partido [] partidosRonda,Pronostico[] pronosticosRonda){
-        Pronostico pronostico = new Pronostico();
-        ResultadoEnum resultadoPronostico;
-        for (int i=0; i < pronosticos.size() ;i++){
-            String participante = pronosticos.get(x).split(";")[5];
-            if ( pronosticos.get(i).split(";")[1].isEmpty()) {//obtenemos la linea que estamos recorriendo separando por ;  y obteniendo la posicion 1,IsEmpty. Devuelve el valor 1 (true) si hay un campo vacío; de lo contrario, devuelve el valor 0 (false).Si el espacio 1 esta vacio puede que sea un empate o que perdio el equipo 1
-                if (pronosticos.get(i).split(";")[3].isEmpty()) {
-                    resultadoPronostico = ResultadoEnum.EMPATE;//empate si en la posicion 3 da 0
-                } else {//pierde el equipo1
-                    resultadoPronostico = ResultadoEnum.PERDEDOR;
+    
+    public static Pronostico[] cargarPronosticos(List<String>pronosticos,Partido [] partidosRonda,Persona[] personas){
+        Pronostico[] pronosticosCargados = new Pronostico[8];
+        int i =0;
+        for(Persona persona:personas) {
+        	for(Partido partido:partidosRonda) {
+        		Pronostico pronostico = new Pronostico();
+        		ResultadoEnum resultadoPronostico;
+        		
+        		String participante = pronosticos.get(i).split(";")[5];
+                if ( pronosticos.get(i).split(";")[1].isEmpty()) {
+                    if (pronosticos.get(i).split(";")[3].isEmpty()) {
+                        resultadoPronostico = ResultadoEnum.EMPATE;
+                    } else {
+                        resultadoPronostico = ResultadoEnum.PERDEDOR;
+                    }
+                } else {
+                    resultadoPronostico = ResultadoEnum.GANADOR;//Si el espacio 1 no esta vacio es porque el equipo 1 GAN (ahi esta la cruz)
                 }
-            } else {
-                resultadoPronostico = ResultadoEnum.GANADOR;//Si el espacio 1 no esta vacio es porque el equipo 1 GAN (ahi esta la cruz)
-            }
-        //Asignamos los valores de las variables mediante los set al pronostico
-        pronostico.setParticipante(participante);
-        pronostico.setPartido(partidosRonda[i]);
-        pronostico.setEquipo(partidosRonda[i].getEquipo1());//Asignamos al equipo y luego su resultado
-        pronostico.setResultado(resultadoPronostico);//seteamos el resultado
-
+            //Asignamos los valores de las variables mediante los set al pronostico
+            pronostico.setParticipante(participante);;
+            pronostico.setPartido(partido);
+            pronostico.setEquipo(partido.getEquipo1());//Asignamos al equipo y luego su resultado
+            pronostico.setResultado(resultadoPronostico);//seteamos el resultado
+            pronosticosCargados[i] = pronostico;
+            i++;
+        	}
+        }
+      
+        return pronosticosCargados;
     }
-        return pronostico;
-    }
+    
+    
     public static void main(String[] args) {
         String resultado = leerArchivos("D:\\Users\\Brenda\\Desktop\\Java - UTN\\TrabajoPractico\\resultados.csv");//archivo resultados
         String archivo2 = leerArchivos("D:\\Users\\Brenda\\Desktop\\Java - UTN\\TrabajoPractico\\pronostico.csv");//archivo pronosticos persona
@@ -76,7 +88,8 @@ public class Prueba {
                 partidosRonda[i] = partido1;
                 i++;
             }
-            Persona personas[] = new Persona[7];
+            
+            Persona personas[] = new Persona[2];
             String participanteAnterior = "";
             String participante="";
             int indice=0;
@@ -86,21 +99,47 @@ public class Prueba {
                     Persona persona1 = new Persona();
                     persona1.setNombre(participante);
 
-                    personas[z]=persona1;
+                    personas[indice]=persona1;
                     indice++;
+                    
+                    participanteAnterior = participante;
                 }
-                participanteAnterior = participante;
+               // participanteAnterior = participante;
+               
             }
-            for (int x =0; x < indice ; x++){
-                Pronostico persona1 = cargarPronosticos(x,pronosticos, partidosRonda, pronosticosRonda);
-                pronosticosRonda[x]=persona1;
+           // for (int x =0; x < indice ; x++){
+             //   Pronostico persona1 = cargarPronosticos(x,pronosticos, partidosRonda, pronosticosRonda);
+             //   pronosticosRonda[x]=persona1;
            
+            //}
+            //System.out.println(pronosticosRonda);
+            
+            //creamos los pronosticoa
+            Pronostico[] pronosticosCargados = cargarPronosticos(pronosticos,partidosRonda,personas);
+            
+            //asignamos los pronosticos a la persona
+            for(Persona persona:personas) {
+            	int j = 0;
+            	Pronostico[] pronosticoPersona = new Pronostico[4];
+            	for(Pronostico pronostico:pronosticosCargados) {
+            		//si el participante del pronostico es igual al parcipante
+            		if(pronostico.getParticipante().equals(persona)) {
+            			pronosticoPersona[j] = pronostico;
+            			persona.setProdePersona(pronosticoPersona);
+            			j++;
+            		}
+            		
+            	}
             }
-            System.out.println(pronosticosRonda);
 
+            //calculamos los puntajes de cada persona
+            System.out.println("Persona | Puntaje");
+            for(Persona persona:personas) {
+            	System.out.println(persona.getNombre() + " | "+persona.puntaje());
+            }
             //invoco a metodo estatico obtener puntos
-            int totalPuntos= obtenerPuntos(pronosticosRonda,pronosticos.size());
-            System.out.println("El puntaje de acuerdo al pronostico que seteo es: "+ totalPuntos);
+            //int totalPuntos= obtenerPuntos(pronosticosRonda,pronosticos.size());
+            //System.out.println("El puntaje de acuerdo al pronostico que seteo es: "+ totalPuntos);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

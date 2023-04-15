@@ -9,11 +9,11 @@ public class Pronostico {
     private String participante;
     public Pronostico() {
     }
-    public Pronostico(Partido partido, Equipo equipo, ResultadoEnum resultado,String participante) {
+    public Pronostico(Partido partido, Equipo equipo, ResultadoEnum resultado) {
         this.partido = partido;
         this.equipo = equipo;
         this.resultado = resultado;
-        this.participante=participante;
+        //this.participante=participante;
     }
     public Partido getPartido() {
         return partido;
