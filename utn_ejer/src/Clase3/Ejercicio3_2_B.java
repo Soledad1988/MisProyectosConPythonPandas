@@ -1,4 +1,4 @@
-package utn_ejer;
+package Clase3;
 
 import java.util.Scanner;
 
