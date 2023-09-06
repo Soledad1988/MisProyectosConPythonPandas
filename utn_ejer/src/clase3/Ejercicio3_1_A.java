@@ -1,4 +1,4 @@
-package Clase3;
+package clase3;
 
 //Dado un String y una letra, que cuente la cantidad de apariciones
 //de la letra en el String
