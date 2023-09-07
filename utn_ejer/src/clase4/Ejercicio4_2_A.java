@@ -1,4 +1,4 @@
-package utn_ejer;
+package clase4;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

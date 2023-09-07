@@ -1,4 +1,4 @@
-package utn_ejer;
+package clase4;
 
 import java.io.FileWriter;
 import java.io.IOException;

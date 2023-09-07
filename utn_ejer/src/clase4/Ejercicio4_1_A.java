@@ -1,5 +1,5 @@
 
-package utn_ejer;
+package clase4;
 
 import java.util.Arrays;
 //Haga un main, donde por parametro ponga 3 números y una letra
