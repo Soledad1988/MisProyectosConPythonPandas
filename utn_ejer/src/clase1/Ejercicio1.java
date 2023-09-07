@@ -1,4 +1,4 @@
-package utn_ejer;
+package clase1;
 
 //Utilizando la sentencia while / For, imprima todos los números entre 2 variables
 //"a" y "b"

@@ -1,4 +1,4 @@
-package utn_ejer;
+package clase1;
 
 import java.util.Scanner;
 //determinar si una persona pertenece al segmento de ingresos altos
