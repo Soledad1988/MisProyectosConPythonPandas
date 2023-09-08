@@ -1,4 +1,4 @@
-package clase_5_1;
+package clase5;
 
 import java.io.*;
 import java.nio.file.Files;
