@@ -1,4 +1,4 @@
-package ejercicio_Clase6;
+package clase6;
 
 public class Calculadora {
 	
