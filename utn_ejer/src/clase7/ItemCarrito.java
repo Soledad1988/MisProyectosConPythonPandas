@@ -1,5 +1,5 @@
 
-package ejercicio_clase7;
+package clase7;
 
 
 public class ItemCarrito {
