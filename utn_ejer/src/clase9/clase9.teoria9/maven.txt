@@ -1,0 +1,6 @@
+Lombok:
+
+https://projectlombok.org/setup/eclipse
+
+Maven:
+https://jarroba.com/maven-en-eclipse/
