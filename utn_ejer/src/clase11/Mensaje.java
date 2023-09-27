@@ -1,4 +1,4 @@
-package clase_11;
+package clase11;
 
 public class Mensaje {
  
