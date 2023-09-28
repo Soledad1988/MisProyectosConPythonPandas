@@ -1,4 +1,4 @@
-package clase_14;
+package clase14;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
