@@ -1,4 +1,4 @@
-package clase_6;
+package clase6;
 
 import org.junit.jupiter.api.BeforeEach;
 

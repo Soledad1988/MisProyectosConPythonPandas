@@ -1,4 +1,4 @@
-package clase_6;
+package clase6;
 
 import java.io.IOException;
 import java.nio.file.Files;
